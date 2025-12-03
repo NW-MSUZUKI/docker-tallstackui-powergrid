@@ -2,10 +2,10 @@ volumes:
   db-data:
 
 services:
-  dev-tallstackui-php-cli: # Web server for remote debug on PhpStorm. /livewire-tallstackui
+  dev-tallstackui-php-cli: # Web server for remote debug on PhpStorm.
     build: ./docker
     volumes:
-      - ./src/:/var/www/html/
+      - ./src/livewire-tallstackui/:/var/www/html/
       - ./docker/php.ini:/usr/local/etc/php/php.ini
     working_dir: /var/www/html
     container_name: dev-tallstackui-php-cli
@@ -18,7 +18,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./src/:/var/www/html/
+      - ./src/livewire-tallstackui/:/var/www/html/
       - ./docker/php.ini:/usr/local/etc/php/php.ini
     working_dir: /var/www/html
     container_name: dev-tallstackui-web
